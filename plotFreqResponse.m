@@ -1,8 +1,6 @@
 %--aaron pycraft
 %  engr 2100
-%  file: plotFreqResponse.m
 %  practicing FIR filters and matlab
-% 
 %% User input
 bb = [ 0.25 0.5 0.25 ]; %constants
 xn = [0, 1, 1, 1, 0]; %input signal
@@ -21,9 +19,9 @@ set(gca,'xtick',w);
 
 %% Frequency reponse plot
 H = freqz( bb, 1, w ); %--magical matlab function
-subplot(2,1,2), plot( w, abs(H) ) %--FREQUENCY RESPONSE
+subplot(2,1,2), plot( w, H ) %--FREQUENCY RESPONSE
 title('frequency response');
-axis([-3.5, 3.5, -0.5, 1.25]); %axis X & Y limits
+axis([-0.1, 1.6, -0.5, 1.25]); %axis X & Y limits
 xlabel('w');
 ylabel('H(w)');
-set(gca,'xtick',[-pi -pi/2 0 pi/2 pi]);
+set(gca,'xtick',w);
